@@ -1,0 +1,29 @@
+{
+  "general": {
+    "name": "Mens fitness #1",
+    "week": "3",
+    "workout": "Lower #1"
+  },
+  "date": "2021-01-12",
+  "time": "8.15",
+  "results": {
+    "duration": "56",
+    "avgBmp": "144",
+    "calBurned": "521"
+  },
+  "exercises": {
+    "name": "Front squat",
+    "reps": "4x4",
+    "aim": "42",
+    "actual": {
+      "sets": [
+        "42x4",
+        "42x4",
+        "42x4",
+        "42x4"
+      ],
+      "exerciseNotes": "suppposed to be top set, but took it easy because of low back pain",
+      "goalNext": "same"
+    }
+  }
+}
