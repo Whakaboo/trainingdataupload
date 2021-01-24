@@ -5,6 +5,8 @@ import App from "../components/App";
 
 const server = express();
 server.use(express.static("dist"));
+server.use(express.json());
+const fs = require("fs");
 
 server.get("/", (req, res) => {
   const initialMarkup = ReactDOMServer.renderToString(<App />);
@@ -23,7 +25,15 @@ server.get("/", (req, res) => {
 });
 
 server.post("/", (req, res) => {
-  res.send("ok");
+  let trainingData = req.body;
+  saveTrainingData(trainingData);
+  res.send({ success: true, msg: "Training saved successfully" });
 });
+
+const saveTrainingData = (data) => {
+  const stringifyData = JSON.stringify(data);
+  const fileName = "whaka.json";
+  fs.writeFileSync(fileName, stringifyData);
+};
 
 server.listen(4242, () => console.log("Server is running..."));
